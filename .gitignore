@@ -1,0 +1,6 @@
+app/cache
+app/logs
+vendor
+composer.lock
+.DS_Store
+_phpmetrics
