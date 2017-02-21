@@ -1,0 +1,49 @@
+<script type="text/javascript">
+    questionData = {
+        '{{ module_id }}': {
+            'submitByClick': {% if config.submit_answer_by_click %} 1 {% else %} 0 {% endif %}
+        }
+    };
+</script>
+
+<div class="question-container" data-time="{{ data.question.timer }}">
+    <div class="question">
+        <span class="count">{{ data.question_index }} / {{ data.question_total }}</span>
+        {% if show_question == 'all' or show_question == 'text' %}
+            {% if data.question.title is defined %}<h2>{{ data.question.title }}</h2>{% endif %}
+            {% if data.question.description is defined %}<h3>{{ data.question.description }}</h3>{% endif %}
+        {% endif %}
+
+        {% if show_question == 'image' %}<h2>{{ 'flashcard_label'|trans({'%time%': data.question.timer}, module_id) }}</h2>{% endif %}
+        {% if show_question == 'all' or show_question == 'image' %}
+            {% if data.question.image is defined %}<img src="{{ data.question.image }}" />{% endif %}
+        {% endif %}
+    </div>
+</div>
+{% if show_answer == true %}
+    {% if data.question_index < data.question_total %}
+        {% set event = 'next' %}
+    {% else %}
+        {% set event = 'finish' %}
+    {% endif %}
+
+    <div class="answer-container">
+        <ol class="answers{% if data.question.answer_type == "image" %} flex{% endif %}">
+            {% for answer_choice in data.question.answer_choices %}
+                <li class="answer answer-{{ data.question.answer_type }}{% if data.question.answer_type == "image" %} flex-item{% endif %}">
+                    <input id="answer-{{ loop.index }}" type="{% if data.question.question_type == "multiple" %}checkbox{% else %}radio{% endif %}" name="answer{% if data.question.question_type == "multiple" %}[]{% endif %}" value="{{ answer_choice.key }}" {% if config.require_answer is defined and config.require_answer %}required{% endif %} {% if config.submit_answer_by_click and data.question.question_type != 'multiple' %}data-event="{{ event }}"{% endif %} />
+                    <label for="answer-{{ loop.index }}">
+                        {% if answer_choice.image is defined %}<img src="{{ answer_choice.image }}" />{% endif %}
+                        {% if answer_choice.title is defined %}<span>{{ answer_choice.title }}</span>{% endif %}
+                    </label>
+                </li>
+
+
+
+            {% endfor %}
+        </ol>
+    </div>
+{% endif %}
+<div class="controls">
+    <div id="no-answer-selected" class="error-block hide"><label>{{ 'no_answer'|trans({}, module_id) }}</label></div>
+</div>

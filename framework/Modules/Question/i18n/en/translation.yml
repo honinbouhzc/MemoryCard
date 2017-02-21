@@ -1,0 +1,13 @@
+prev_label: Previous question
+next_label: Next question
+finish_label: Submit
+no_answer: Please select an answer to continue
+
+score_label: >
+    You got %correct% out of %total% right!
+    And a percentage of %percentage%%
+
+outcome_label: You are a %outcome_title%
+
+
+flashcard_label: You have %time% Seconds to remember the image

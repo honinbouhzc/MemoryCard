@@ -1,0 +1,22 @@
+{
+    "title": "Game Validation",
+    "type": "object",
+    "properties": {
+        "key": {
+            "type": "string"
+        },
+        "show_heading": {
+            "type": "boolean"
+        },
+        "show_avatar": {
+            "type": "boolean"
+        },
+        "use_score": {
+            "type": "boolean"
+        },
+        "use_time": {
+            "type": "boolean"
+        }
+    },
+    "required": ["key"]
+}

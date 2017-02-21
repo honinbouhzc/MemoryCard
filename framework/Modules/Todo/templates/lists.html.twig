@@ -1,0 +1,5 @@
+<div class="todo-lists-container">
+{% for listIndex,list in data.lists %}
+    {% include(module.getTemplateFile('list')) with {'activeListId': activeListId} %}
+{% endfor %}
+</div>

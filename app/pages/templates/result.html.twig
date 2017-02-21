@@ -1,0 +1,26 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="green-background">
+    </div>
+    <div class="smaller-container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h2>{{ 'leaderboard'|trans({}, pageId) }}</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row text-center">
+            <div class="col-xs-12">
+                <a class="btn btn-default replay" href="{{ url('game') }}">{{ 'replay'|trans({}, pageId) }}</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="footer-container">
+    {% include 'simple-footer.html.twig' %}
+    <div class="clearfix"/>
+    </div>
+{% endblock %}

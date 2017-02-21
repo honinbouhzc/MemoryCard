@@ -1,0 +1,40 @@
+<div class="leaderboard">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">{{ 'leaderboard_heading'|trans({}, module_id) }}</div>
+
+        <!-- Table -->
+        <table class="table scores">
+            {% if config.show_heading is defined and config.show_heading %}
+            <thead>
+                <tr>
+                    <th>{{ 'heading_position'|trans({}, module_id) }}</th>
+                    <th>{{ 'heading_player'|trans({}, module_id) }}</th>
+                    {% if config.use_score is defined and config.use_score %}<th>{{ 'heading_score'|trans({}, module_id) }}</th>{% endif %}
+                    {% if config.use_time is defined and config.use_time %}<th>{{ 'heading_time'|trans({}, module_id) }}</th>{% endif %}
+                </tr>
+            </thead>
+            {% endif %}
+            <tbody>
+                {% for score in leaderboard %}
+                <tr class="score{% if playerUuid == score.person.uuid %} info{% endif %}">
+                    <th scope="row">{{ score.position }}</th>
+                    <td>
+                        {% if config.show_avatar is defined and config.show_avatar %}
+                        <img class="avatar" src="{{ score.person.picture ? score.person.picture : "#{module_path}assets/img/avatar-placeholder.jpg" }}">
+                        {% endif %}
+                        <span class="name">{{ score.person.name
+                        ? score.person.name
+                        : ( (score.person.firstName or score.person.lastName)
+                            ? "#{score.person.firstName} #{score.person.lastName}"
+                            : 'anonymous'|trans({}, module_id))
+                        }}</span>
+                    </td>
+                    {% if config.use_score is defined and config.use_score %}<td>{{ score.score }}</td>{% endif %}
+                    {% if config.use_time is defined and config.use_time %}<td>{{ score.time }}</td>{% endif %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

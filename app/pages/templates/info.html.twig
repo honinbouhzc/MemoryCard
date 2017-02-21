@@ -1,0 +1,22 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="row content-header">
+    </div>
+    <div class="row content-middle">
+        <div class="heading">
+            <h3 class="title text-center">{{ 'get_prize'|trans({}, pageId) }}</h3>
+            <p class="text">{{ 'fill_data'|trans({}, pageId)|raw }}</p>
+        </div>
+
+        <div class="row">
+            <div class="info-form">
+                {{ modules['info-form'].render() | raw }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'simple-footer.html.twig' %}
+{% endblock %}

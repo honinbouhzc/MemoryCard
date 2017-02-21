@@ -1,0 +1,11 @@
+<footer>
+    <div class="row">
+        <div class="col-xs-6 text-left footer-content">
+            <img class="img-responsive enjoy" src="assets/img/footer-enjoy.png" />
+        </div>
+        <div class="col-xs-6 text-right change-lang">
+            <a lang="en" href="{{ url(app.request_stack.getCurrentRequest.get('_route'), {'_locale': 'en'}) }}">EN</a> /
+            <a lang="cn" href="{{ url(app.request_stack.getCurrentRequest.get('_route'), {'_locale': 'cn'}) }}">中文</a>
+        </div>
+    </div>
+</footer>

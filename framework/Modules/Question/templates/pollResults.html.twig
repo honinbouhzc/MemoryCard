@@ -1,0 +1,37 @@
+<div class="results">
+    <div class="question">
+        {% if question.title is defined %}<h2>{{ question.title }}</h2>{% endif %}
+        {% if question.image is defined %}<img src="{{ question.image }}" />{% endif %}
+    </div>
+    <div class="answer-container">
+        {% if type == 'image' %}<ol class="answers flex">{% endif %}
+
+        {% for answer in answers %}
+            {% set percentage = (totalAnswers != 0 ? ((answer.count / totalAnswers) * 100) : 0) | number_format() %}
+            {% if type == 'image' %}
+                <li class="answer answer-image  flex-item">
+                    <label for="answer-{{ loop.index }}">
+                        <div class="image-caption">
+                            <img src="{{ answer.image }}" />
+                            <div class="caption">
+                                <p class="caption_content">{{ percentage }}%</p>
+                            </div>
+                        </div>
+                        <span>{{ answer.title }}</span>
+                    </label>
+                </li>
+
+            {% else %}
+                <div>{{ answer.title }}</div>
+                <div class="progress">
+                    <div class="progress-bar question-progress" role="progressbar" aria-valuenow="{{ percentage }}"
+                         aria-valuemin="0" aria-valuemax="100" style="width:{{ percentage }}%">
+                        {{ percentage }}%
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        {% if type == 'image' %}</ol>{% endif %}
+    </div>
+</div>

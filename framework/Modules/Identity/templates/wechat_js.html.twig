@@ -1,0 +1,22 @@
+<script>
+    var wechatShareConfig = {
+        debug: {{ debug ?: 'false' }},
+        appId: '{{ signedPackage.appId }}',
+        timestamp: {{ signedPackage.timestamp }},
+        nonceStr: '{{ signedPackage.nonceStr }}',
+        signature: '{{ signedPackage.signature }}',
+        jsApiList: [
+            'showOptionMenu',
+            'onMenuShareTimeline', 'onMenuShareAppMessage', 
+            'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone'
+        ]
+    };
+
+    var wechatShareData = {
+        title: '{{ title }}',
+        desc: '{{ description }}',
+        link: '{{ link }}',
+        imgUrl: '{{ picture }}',
+        hash: '{{ hash }}'
+    }
+</script>

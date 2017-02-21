@@ -1,0 +1,33 @@
+<div id={{ module_id }} class="slider_container" data-autoplay="{{ config.autoplay }}" data-interval="{{ config.interval }}" data-vertical="{{ config.vertical }}" style="width:{{ config.width }};height:{{ config.height }};">
+    <div u="slides" class="slides">
+        {% for image in config.images %}
+            <div>
+                {% if image.link is defined %}<a u="image" href="{{ image.link }}">{% endif %}
+                <img {% if image.src is defined %}src="{{ image.src }}"{% endif %} {% if image.link is not defined %}u="image"{% endif %}/>
+
+                {% if image.title is defined %}
+                <div u="caption" t="CLIP|LR" t2="FADE" class="captionBlack">{{ image.title }}</div>
+                {% endif %}
+
+                {% if image.link is defined %}</a>{% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if config.show_navigator %}
+    <div u="navigator" class="jssorb01 {% if config.vertical %}vertical{% endif %}">
+        <div u="prototype"></div>
+    </div>
+    {% endif %}
+
+    {% if config.show_arrow %}
+        {% if config.vertical %}
+        <span class="jssora08l" u="arrowleft"></span>
+        <span class="jssora08r" u="arrowright"></span>
+        {% else %}
+        <span class="jssora02l" u="arrowleft"></span>
+        <span class="jssora02r" u="arrowright"></span>
+        {% endif %}
+    {% endif %}
+
+</div>

@@ -1,0 +1,19 @@
+{
+    "title": "Form Validation",
+    "type": "object",
+    "properties": {
+        "uuid": {
+            "type": "string"
+        },
+        "redirect_url": {
+            "type": "string"
+        },
+        "options": {
+            "type": "array"
+        },
+        "fields": {
+            "type": "array"
+        }
+    },
+    "required": ["uuid", "options", "fields"]
+}

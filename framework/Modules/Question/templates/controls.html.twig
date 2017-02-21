@@ -1,0 +1,10 @@
+<div class="controls">
+    {% if data.question_index > 1 %}
+        <a class="btn btn-default" data-event="prev" href="#" role="button">{{ 'prev_label'|trans({}, module_id) }}</a>
+    {% endif %}
+    {% if data.question_index < data.question_total %}
+        <a class="btn btn-primary" data-event="next" href="#" role="button">{{ 'next_label'|trans({}, module_id) }}</a>
+    {% else %}
+        <a class="btn btn-primary" data-event="finish" href="#" role="button">{{ 'finish_label'|trans({}, module_id) }}</a>
+    {% endif %}
+</div>

@@ -1,0 +1,186 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="green-background">
+    </div>
+    <div class="smaller-container">
+        <div class="row bars-header">
+            {% if lang == 'cn' %}
+                <div class="col-xs-12 text-center">
+                <h5>前往下列Jameson合作酒吧</h5>
+                </div>
+            {% endif %}
+            <div class="col-xs-12 text-center">
+                <h2>{{ 'bars'|trans({}, pageId) }}</h2>
+            </div>
+        </div>
+        <hr>
+
+        {% if lang == 'cn' %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>上海</h3>
+                    <ul>
+                        <li>
+                            <span class="bar-name">Amber</span>
+                            <span class="bar-address">泰兴路99号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Boom Boom</span>
+                            <span class="bar-address">安福路39号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Blarney Stone</span>
+                            <span class="bar-address">永康路77-79号底层</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">District</span>
+                            <span class="bar-address">愚园路284号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Dogtown</span>
+                            <span class="bar-address">陕西北路409号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Dope Shifu</span>
+                            <span class="bar-address">昌平路317-8号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">El Ocho</span>
+                            <span class="bar-address">泰兴路99号A栋3楼</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Logan’s Punch</span>
+                            <span class="bar-address">泰兴路99号张园A栋202</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Rooster Jingan</span>
+                            <span class="bar-address">陕西北路455号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">That One Place</span>
+                            <span class="bar-address">胶州路273弄10号</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>北京</h3>
+                    <ul>
+                        <li>
+                            <span class="bar-name">MODERNSKY LAB</span>
+                            <span class="bar-address">朝阳门南银河SOHO</span>
+                        <li>
+                            <span class="bar-name">Paddy O Shea</span>
+                            <span class="bar-address">东直门外大街28号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Ron Mexico</span>
+                            <span class="bar-address">安定门内大街永康胡同17号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">SchoolHouse Live</span>
+                            <span class="bar-address">东城区五道营胡同53号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Siif</span>
+                            <span class="bar-address">北锣鼓巷67号</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Temple Bar</span>
+                            <span class="bar-address">东城区鼓楼东大街206号院内B202</span>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% else %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>SHANGHAI</h3>
+                    <ul>
+                        <li>
+                            <span class="bar-name">Amber</span>
+                            <span class="bar-address">99 Taixing Lu</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Boom Boom</span>
+                            <span class="bar-address">No.39 Anfu Road</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Blarney Stone</span>
+                            <span class="bar-address">GF, No.77-79 Yongkang Road</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">District</span>
+                            <span class="bar-address">No.284 Yuyuan Road</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Dogtown</span>
+                            <span class="bar-address">No.409 Shanxi North Road</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Dope Shifu</span>
+                            <span class="bar-address">No.317-8 Changping Road</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">El Ocho</span>
+                            <span class="bar-address">3F, Block A, No.99 Taixing Road</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Logan’s Punch</span>
+                            <span class="bar-address">202, Block A, No.99 Taixing Road</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Rooster Jingan</span>
+                            <span class="bar-address">455 Shanxi Bei Lu</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">That One Place</span>
+                            <span class="bar-address">No.10, 273, Jiaozhou Road</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>BEIJING</h3>
+                    <ul>
+                        <li>
+                            <span class="bar-name">MODERNSKY LAB</span>
+                            <span class="bar-address">Galaxy SOHO, Chaoyangmen North</span>
+                        <li>
+                            <span class="bar-name">Paddy O Shea</span>
+                            <span class="bar-address">No.28 Dongzhimen Wai Street</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Ron Mexico</span>
+                            <span class="bar-address">No.17 Yongkang Hutong</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">SchoolHouse Live</span>
+                            <span class="bar-address">No.53 Wudaoying Hudong</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Siif</span>
+                            <span class="bar-address">No.67 North Luogu Lane</span>
+                        </li>
+                        <li>
+                            <span class="bar-name">Temple Bar</span>
+                            <span class="bar-address">B202, No.206 Gulou East Street</span>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    <div class="footer-container">
+        {% include 'simple-footer.html.twig' %}
+        <div class="clearfix"/>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% if config.options.label_placement != 'top-aligned' %}
+    {% form_theme form with ['bootstrap_3_horizontal_layout.html.twig', '@CoreModules/Form/form_theme.html.twig'] %}
+{% else %}
+    {% form_theme form with ['bootstrap_3_layout.html.twig', '@CoreModules/Form/form_theme.html.twig'] %}
+{% endif %}
+
+{{ form_start(form) }}
+<legend>{{ config.options.name is defined ? config.options.name : '' }}</legend>
+<p>{{ config.options.description is defined ? config.options.description : '' }}</p>
+
+{{ form_widget(form) }}
+<div class="area-group"></div>
+{{ form_end(form) }}

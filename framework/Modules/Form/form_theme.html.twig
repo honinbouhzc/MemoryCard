@@ -1,0 +1,32 @@
+{% block checkbox_radio_label %}
+    {# Do not display the label if widget is not defined in order to prevent double label rendering #}
+    {% if widget is defined %}
+        {% if required %}
+            {# {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' required')|trim}) %} #}
+        {% endif %}
+        {% if parent_label_class is defined %}
+            {% set label_attr = label_attr|merge({class: (label_attr.class|default('') ~ ' ' ~ parent_label_class)|trim}) %}
+        {% endif %}
+        {% if label is not sameas(false) and label is empty %}
+            {% set label = name|humanize %}
+        {% endif %}
+        {{- widget|raw -}}
+        <label for="{{ id }}"{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+            {% autoescape false %}
+            {{- label is not sameas(false) ? (translation_domain is sameas(false) ? label : label|trans({}, translation_domain)) -}}
+            {% endautoescape %}
+        </label>
+    {% endif %}
+{% endblock checkbox_radio_label %}
+
+{% block nameset_widget %}
+    <div class="row">
+        <div {{ block('widget_container_attributes') }}>
+            {% for child in form %}
+                <div class="col-sm-3">
+                    {{ form_widget(child) }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

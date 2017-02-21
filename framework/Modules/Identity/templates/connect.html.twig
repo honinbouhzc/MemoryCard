@@ -1,0 +1,9 @@
+<div class="identity connect">
+	{% for network,connect in networks %}
+        {% if network in connected_networks %}
+            <a class="btn btn-default {{ network }}" role="button" disabled="disabled">{{ ('connected_' ~ network) | trans({}, module_id) }}</a>
+        {% else %}
+            <a class="btn btn-default {{ network }}" href="{{ connect.link }}" target="_blank" data-doconnect="doconnect" role="button">{{connect.label|trans({}, module_id) }}</a>
+        {% endif %}
+	{% endfor %}
+</div>

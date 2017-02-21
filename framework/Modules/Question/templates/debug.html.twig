@@ -1,0 +1,69 @@
+<div class="debug">
+    <section>
+        <h1>Outcomes</h1>
+        <div class="outcome-container">
+            <ul class="outcomes flex">
+                {% for outcome in config.outcomes %}
+                <li class="outcome flex-item">
+                    {% if outcome.image is defined %}<img src="{{ outcome.image }}" />{% endif %}
+                    {% if outcome.title is defined %}<h2>{{ outcome.title }}</h2>{% endif %}
+                    {% if outcome.description is defined %}<p>{{ outcome.description }}</p>{% endif %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    <section>
+        <h1>Questions</h1>
+        {% for question in config.questions %}
+        <div class="question-container">
+            <div class="question">
+                <span class="count">{{ loop.index }} / {{ data.question_total }}</span>
+                {% if question.title is defined %}<h2>{{ question.title }}</h2>{% endif %}
+                {% if question.image is defined %}<img src="{{ question.image }}" />{% endif %}
+            </div>
+        </div>
+
+        <div class="answer-container">
+            <ol class="answers {{ config.type }}-based{% if question.answer_type == "image" %} flex{% endif %}">
+
+            {% if config.type == 'graded' %}
+                {% for answer_choice in question.answer_choices %}
+                <li class="answer answer-{{ question.answer_type }}{% if question.answer_type == "image" %} flex-item{% endif %}{% if answer_choice.is_correct is defined and answer_choice.is_correct %} correct{% endif %}">
+                    <input id="answer-{{ loop.parent.loop.index }}-{{ loop.index }}" type="{% if question.question_type == "multiple" %}checkbox{% else %}radio{% endif %}" name="answer-{{ loop.parent.loop.index }}{% if question.question_type == "multiple" %}[]{% endif %}" value="{{ loop.index }}" {% if config.require_answer is defined and config.require_answer %}required{% endif %} />
+                    <label for="answer-{{ loop.parent.loop.index }}-{{ loop.index }}">
+                        {% if answer_choice.is_correct is defined and answer_choice.is_correct %}
+                        <i class="list-item-icon">
+                            <i class="icon icon-ss-check"></i>
+                        </i>
+                        {% endif %}
+                        {% if answer_choice.image is defined %}<img src="{{ answer_choice.image }}" />{% endif %}
+                        {% if answer_choice.title is defined %}<span>{{ answer_choice.title }}</span>{% endif %}
+                    </label>
+                </li>
+                {% endfor %}
+            {% elseif config.type == 'outcome' %}
+                {% for answer_choice in question.answer_choices %}
+                <li class="answer answer-{{ question.answer_type }}{% if question.answer_type == "image" %} flex-item{% endif %}">
+                    <input id="answer-{{ loop.parent.loop.index }}-{{ loop.index }}" type="{% if question.question_type == "multiple" %}checkbox{% else %}radio{% endif %}" name="answer-{{ loop.parent.loop.index }}{% if question.question_type == "multiple" %}[]{% endif %}" value="{{ loop.index }}" {% if config.require_answer is defined and config.require_answer %}required{% endif %} />
+                    <label for="answer-{{ loop.parent.loop.index }}-{{ loop.index }}">
+                        {% if answer_choice.outcome_keys %}
+                        <ul class="answer-outcomes">
+                            {% for outcome_key in answer_choice.outcome_keys %}
+                            <li class="answer-outcome">{{ outcome_key }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if answer_choice.image is defined %}<img src="{{ answer_choice.image }}" />{% endif %}
+                        {% if answer_choice.title is defined %}<span>{{ answer_choice.title }}</span>{% endif %}
+                    </label>
+                </li>
+                {% endfor %}
+            {% endif %}
+
+            </ol>
+        </div>
+        <div class="clearfix"></div>
+        {% endfor %}
+    </section>
+</div>

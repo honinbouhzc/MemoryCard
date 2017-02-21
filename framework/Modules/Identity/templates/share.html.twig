@@ -1,0 +1,7 @@
+<div class="identity_share">
+	{% for network,share in networks %}
+		{% if network != "wechat" %}
+			<a class="btn btn-default {{ network }}" href="{{ share.link }}" target="_blank" data-doshare="doshare" role="button">{{share.label|trans({}, module_id) }}</a>
+		{% endif %}
+	{% endfor %}
+</div>

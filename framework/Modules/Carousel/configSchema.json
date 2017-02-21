@@ -1,0 +1,33 @@
+{
+    "title": "Carousel Validation",
+    "type": "object",
+    "properties": {
+        "vertical": {
+            "type": "boolean"
+        },
+        "autoplay": {
+            "type": "boolean"
+        },
+        "interval": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "show_navigator": {
+            "type": "boolean"
+        },
+        "show_arrow": {
+            "type": "boolean"
+        },
+        "width": {
+            "type": "string"
+        },
+        "height": {
+            "type": "string"
+        },
+        "images": {
+            "type": "array",
+            "minItems": 1
+        }
+    },
+    "required": ["width", "height", "images"]
+}

@@ -1,0 +1,18 @@
+{
+    "title": "Timer Validation",
+    "type": "object",
+    "properties": {
+        "duration": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "direction": {
+            "enum": ["up", "down"]
+        },
+        "interval": {
+            "description": "Sync interval",
+            "type": "integer",
+            "minimum": 5
+        }
+    }
+}

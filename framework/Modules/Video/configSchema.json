@@ -1,0 +1,22 @@
+{
+    "title": "Video Validation",
+    "type": "object",
+    "properties": {
+        "type": {
+            "enum": ["youku", "tencent"]
+        },
+        "id": {
+            "type": "string"
+        },
+        "width": {
+            "type": "string"
+        },
+        "height": {
+            "type": "string"
+        },
+        "autoplay": {
+            "type": "boolean"
+        }
+    },
+    "required": ["type", "id"]
+}

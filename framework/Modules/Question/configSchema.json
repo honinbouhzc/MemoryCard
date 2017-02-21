@@ -1,0 +1,37 @@
+{
+    "title": "Question Validation",
+    "type": "object",
+    "properties": {
+        "uid": {
+            "type": "string"
+        },
+        "debug": {
+            "type": "boolean"
+        },
+        "random_questions": {
+            "type": "boolean"
+        },
+        "random_answers": {
+            "type": "boolean"
+        },
+        "type": {
+            "enum": ["graded", "outcome"]
+        },
+        "redirect_url": {
+            "type": "string"
+        },
+        "flashcard_timer": {
+            "type": "integer"
+        },
+        "submit_answer_by_click": {
+            "type": "boolean"
+        },
+        "outcomes": {
+            "type": "array"
+        },
+        "questions": {
+            "type": "array"
+        }
+    },
+    "required": ["uid", "type", "redirect_url", "questions"]
+}

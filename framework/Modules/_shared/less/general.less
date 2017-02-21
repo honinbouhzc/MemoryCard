@@ -1,0 +1,63 @@
+.bg-size(@width, @height: ~'') {
+  -moz-background-size: @arguments;
+  -webkit-background-size: @arguments;
+  -o-background-size: @arguments;
+  background-size: @arguments;
+}
+
+.transform(@string) {
+  -webkit-transform: @string;
+  -moz-transform: @string;
+  -ms-transform: @string;
+  -o-transform: @string;
+}
+
+.transform-style(@string) {
+  -webkit-transform-style: @string;
+  -moz-transform-style: @string;
+  -ms-transform-style: @string;
+  -o-transform-style: @string;
+}
+
+.transition (@transition) {
+  -webkit-transition: @transition;
+  -moz-transition: @transition;
+  -ms-transition: @transition;
+  -o-transition: @transition;
+}
+
+.border-radius (@radius) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  border-radius:         @radius;
+}
+
+.border-radiuses (@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+}
+
+.box-shadow (@string) {
+  -webkit-box-shadow: @string;
+  -moz-box-shadow: @string;
+  box-shadow: @string;
+}
+
+.perspective (@value: 1000) {
+  -webkit-perspective: @value;
+  -moz-perspective: @value;
+  -ms-perspective: @value;
+  perspective: @value;
+}

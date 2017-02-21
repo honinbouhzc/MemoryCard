@@ -1,0 +1,14 @@
+.module-todo iframe {
+  border: 0;
+  width: 100%;
+}
+.module-todo ul.todo-lists li {
+  list-style-type: none;
+}
+.module-todo .todo-list ul li {
+  list-style-type: none;
+}
+
+.module-todo .hidden {
+  visibility: hidden;
+}

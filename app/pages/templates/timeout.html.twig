@@ -1,0 +1,26 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="row content-header">
+    </div>
+    <div class="row content-middle">
+        <div class="text-center">
+            <div class="title">
+            {% if lang == "en" %}
+                <h2>THAT WAS A </h2>
+                <h1>FAIL</h1>
+            {% else %}
+                <h1>看起来好像完蛋了……</h1>
+            {% endif %}
+            </div>
+
+            <p class="text-left message">{{ 'message'|trans({}, pageId) }}</p>
+
+            <a class="btn btn-danger" href="{{ url('game') }}">{{ 'replay'|trans({}, pageId) }}</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'simple-footer.html.twig' %}
+{% endblock %}

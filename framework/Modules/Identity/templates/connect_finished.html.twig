@@ -1,0 +1,15 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}	
+    <script>
+        if (window.isWechat) {
+            document.location = '{{ referrer }}';
+        } else {
+            window.opener.connectCompleted({
+                'network': '{{ network }}',
+                'module_id': '{{ module_id }}'
+            });
+            window.close();
+        }
+    </script>
+{% endblock %}

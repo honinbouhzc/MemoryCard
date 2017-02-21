@@ -1,0 +1,26 @@
+<div class="todo-list {% if activeListId is defined and activeListId != list.id %}hidden{% endif %}" id="{{ list.id }}" >
+    {% if list.description is defined %}<span>{{ list.description }}</span>{% endif %}
+    <ul>
+        {% for item in list.items %}
+            <li data-id="{{ item.id }}" data-list-id="{{ list.id }}">
+                <div class="checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" name="{{ item.id }}"
+                               {% if item.changeable != true %}disabled="disabled"
+                                {% else %} data-event="toggleItem" {% endif %}
+
+                                {% if (item.is_completed) %} checked {% endif %}
+                        />
+                        <a href="{{ baseUrl }}{{ pageId }}#list={{ list.id }}&item={{ item.id }}" {% if config.has_detail_view == true %}data-event="viewItem" {% endif %}>
+                            {{ item.title }}
+                        </a>
+                    </label>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% for item in list.items %}
+    {% include(module.getTemplateFile('item')) %}
+{% endfor %}

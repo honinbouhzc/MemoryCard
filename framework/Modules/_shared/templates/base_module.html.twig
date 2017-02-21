@@ -1,0 +1,9 @@
+<div class="moduleContainer module-{{ module_class }}" data-module-class="{{ module_class }}" data-module-id="{{ module_id }}" data-module-template="{{ templateName }}">
+    {% if use_form %}
+    <form>
+    {% endif %}
+    {% include template %}
+    {% if use_form %}
+    </form>
+    {% endif %}
+</div>

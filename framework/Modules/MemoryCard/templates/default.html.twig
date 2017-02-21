@@ -1,0 +1,28 @@
+{% if config.validation_type == 'client' %}
+    <script>
+        if (typeof memoryCardsData == "undefined") {
+            memoryCardsData = [];
+            memoryCardsIds  = [];
+        }
+
+        memoryCardsData['{{ module_id }}'] = [];
+        memoryCardsIds['{{ module_id }}'] = [];
+        {% for key,card in cards %}
+            memoryCardsData['{{ module_id }}']['{{ key }}'] = '{{ card.img }}';
+            memoryCardsIds['{{ module_id }}']['{{ key }}'] = '{{ card.id }}';
+        {% endfor %}
+    </script>
+{% endif %}
+
+<div class="game-container" data-match-count="{{ config.match_count }}" data-rotate-on-match="{{ config.rotate_on_match }}" data-rotate-chance="{{ config.rotate_chance }}" data-validation-type="{{ config.validation_type }}">
+    <div class="gameboard">
+        <ul>
+            {% for key,card in cards %}
+            <li id="card-{{ key }}" class="card" data-value="{{ key }}">
+                <span></span>
+                <span class="back"></span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

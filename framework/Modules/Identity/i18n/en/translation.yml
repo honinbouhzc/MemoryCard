@@ -1,0 +1,30 @@
+connect_label: Connect
+connected_label: Connected
+disconnect_lable: Disconnect
+
+share_label: Share to
+
+facebook: Facebook
+twitter: Twitter
+wechat: WeChat
+linkedin: LinkedIn
+
+share_facebook: Share to Facebook
+share_twitter:  Share to Twitter
+share_wechat:   Share to WeChat
+share_linkedin: Share to LinkedIn
+share_weibo: 	Share to Weibo
+
+connect_facebook: Connect with Facebook
+connect_twitter: Connect with Twitter
+connect_wechat:   Connect with WeChat
+connect_weibo:   Connect with Weibo
+connect_linkedin: Connect with LinkedIn
+
+connected_facebook: Connected with Facebook
+connected_twitter: Connected with Twitter
+connected_wechat: Connected with WeChat
+connected_weibo: Connected with Weibo
+connected_linkedin: Connected with LinkedIn
+
+connect_finished: Connect to %network% completed

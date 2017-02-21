@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ htmlblock('header.begin') }}
+
+        <title>{% if lang == 'en' %}Your mystery treat awaits you this halloween..{% elseif lang == 'cn' %}逃出这个万圣夜！通关后get神秘奖励..{% endif %}</title>
+
+        <base href="{{ global.request.baseUrl }}/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="assets/vendors/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        {% for asset_url in assets('styles') %}
+        <link rel="stylesheet" href="{{ asset_url }}">
+        {% endfor %}
+
+        <script src="assets/js/modernizr-latest.min.js"></script>
+        {% if pageId is defined %}
+        <script type="text/javascript" src="assets/js/framework.min.js"></script>
+        <script>
+            var pageId      = '{{ pageId }}';
+            var appkey      = '{{ appkey }}';
+            var baseUrl     = '{{ baseUrl }}';
+            var puuid       = '{{ puuid() }}';
+            var isMobile    = {{ isMobile }};
+            var isWechat    = {{ isWechat }};
+        </script>
+        {% endif %}
+
+        {{ htmlblock('header.end')|raw }}
+    </head>
+    <body class="{{pageId}} {{ lang }}" lang="{{ lang }}">
+        {{ htmlblock('body.start')|raw }}
+        <div class="content container-fluid">
+        {% if modules is defined %}{{ modules['identity-manager'].render('share') | raw }}{% endif %}
+        {% block content %}{% endblock %}
+        {% block footer %}{% endblock %}
+        </div>
+
+        <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+        <script src="assets/vendors/jquery/1.9.1/jquery.min.js"></script>
+        <script src="assets/vendors/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script>window.jQuery || document.write('<script src="assets/vendors/jquery/1.9.1/jquery.min.js"><\/script>')</script>
+
+        {% for asset_url in assets('scripts') %}
+        <script src="{{ asset_url }}"></script>
+        {% endfor %}
+        {{ htmlblock('body.end')| raw }}
+
+        <script src="https://use.typekit.net/yxo1shw.js"></script>
+        <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    </body>
+</html>

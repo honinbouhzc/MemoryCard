@@ -1,0 +1,23 @@
+{
+    "title": "Question Validation",
+    "type": "object",
+    "properties": {
+        "match_count": {
+            "type": "integer",
+            "minimum": 2
+        },
+        "rotate_on_match": {
+            "type": "boolean"
+        },
+        "rotate_chance": {
+            "type": "number"
+        },
+        "validation_type": {
+            "enum": ["client", "server"]
+        },
+        "cards": {
+            "type": "array"
+        }
+    },
+    "required": ["cards"]
+}

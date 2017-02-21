@@ -1,0 +1,31 @@
+form .error-block label {
+	color: #cc0000;
+}
+
+form .form-group label.control-label.required:after {
+    content:" *";
+    color:red;
+}
+
+.module-form[data-module-class="form"] .loading[type="submit"]:before {
+    display: inline-block;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #0071FF #B7C8CE #B7C8CE;
+    width: 14px;
+    height: 14px;
+    content: '';
+    border-radius: 100%;
+    margin-right: 5px;
+    -webkit-animation: loading-and-rotating infinite 0.7s linear;
+            animation: loading-and-rotating infinite 0.7s linear;
+}
+
+@-webkit-keyframes loading-and-rotating {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes loading-and-rotating {
+  0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}

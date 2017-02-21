@@ -1,0 +1,24 @@
+<div class="results">
+    {% if config.type == 'graded' %}
+        {% if outcome %}
+            <h2>{{ 'outcome_label'|trans({'%outcome_title%': outcome.title}, module_id) }}</h2>
+            <h4>{{ 'score_label'|trans({
+                '%correct%': correct_count,
+                '%total%': total_count,
+                '%percentage%': percentage
+            }, module_id) }}</h4>
+            <img src="{{ outcome.image }}">
+            <p>{{ outcome.description }}</p>
+        {% else %}
+            <h4>{{ 'score_label'|trans({
+                '%correct%': correct_count,
+                '%total%': total_count,
+                '%percentage%': percentage
+            }, module_id) }}</h4>
+        {% endif %}
+    {% elseif config.type == 'outcome' %}
+        <h2>{{ 'outcome_label'|trans({'%outcome_title%': outcome.title}, module_id) }}</h2>
+        <img src="{{ outcome.image }}">
+        <p>{{ outcome.description }}</p>
+    {% endif %}
+</div>

@@ -1,0 +1,33 @@
+<!-- Mobile stuff -->
+<link rel="apple-touch-icon" href="{{ meta.picture|e('html') }}">
+
+<!-- Meta data -->
+<meta name="title" content="{{ meta.title|e('html') }}">
+<meta name="description" content="{{ meta.description|e('html') }}">
+
+<!-- link to the page -->
+<link rel="canonical" href="{{ meta.link|e('html') }}" />
+
+<!-- Social: Twitter -->
+{% if twitter.site is defined %}
+<meta name="twitter:site" content="{{ twitter.site|e('html') }}">
+{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta.title|e('html') }}">
+<meta name="twitter:description" content="{{ meta.description|e('html') }}">
+<meta name="twitter:image:src" content="{{ meta.picture|e('html') }}">
+<meta name="twitter:site" content="@scrmhub">
+<meta name="twitter:domain" content="scrmhub.com">
+
+<!-- Social: Facebook & Linkedin / Open Graph -->
+<meta property="og:url" content="{{ meta.link|e('html') }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ meta.title|e('html') }}">
+<meta property="og:image" content="{{ meta.picture|e('html') }}"/>
+<meta property="og:description" content="{{ meta.description|e('html') }}">
+<meta property="og:site_name" content="{{ meta.sitename|e('html') }}">
+
+<!-- Social: Google+ / Schema.org  -->
+<meta itemprop="name" content="{{ meta.title|e('html') }}">
+<meta itemprop="description" content="{{ meta.description|e('html') }}">
+<meta itemprop="image" content="{{ meta.picture|e('html') }}">

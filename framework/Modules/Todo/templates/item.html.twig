@@ -1,0 +1,13 @@
+<div class="todo-item hidden well" data-id="{{ item.id }}" data-list-id="{{ item.listId }}">
+    {% if item.description is defined %}
+    <div>
+        {{ item.description }}
+    </div>
+    {% endif %}
+
+    {% if item.link is defined %}
+        <a class="todo-item-link btn btn-default" role="button" href="{{ item.link.url }}" {% if item.link.external == true %} target="_blank" {% endif %} data-event="viewItemLink" data-title="{{ item.link.title }}">
+            {{ item.link.title }}
+        </a>
+    {% endif %}
+</div>

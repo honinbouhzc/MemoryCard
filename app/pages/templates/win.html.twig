@@ -1,0 +1,21 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <div class="row content-header">
+    </div>
+    <div class="row content-middle">
+        <div class="text-center">
+            <div class="title">
+                <h3>{{ 'won'|trans({}, pageId) }}</h3>
+            </div>
+
+            <p class="text-left message">{{ 'skills'|trans({}, pageId) | raw }}</p>
+
+            <a class="btn btn-danger" href="{{ url('info') }}">{{ 'collect_btn'|trans({}, pageId) }}</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'simple-footer.html.twig' %}
+{% endblock %}

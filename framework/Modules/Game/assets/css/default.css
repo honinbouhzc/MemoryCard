@@ -1,0 +1,12 @@
+.module-game .leaderboard {
+  max-width: 924px;
+  margin: 0 auto;
+}
+.module-game .score .avatar {
+  width: 50px;
+  height: 50px;
+}
+.module-game .score .name {
+  vertical-align: top;
+  font-weight: 500;
+}

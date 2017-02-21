@@ -1,0 +1,195 @@
+.module-memoryCard .game-container {
+  margin: 0 auto;
+}
+.module-memoryCard .gameboard ul {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  padding: 20px 0 0 20px;
+  background: #666;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0 0 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0 0 2px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0 0 2px;
+  overflow: auto;
+}
+.module-memoryCard .card {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 20px 20px 0;
+  float: left;
+  display: inline;
+  -webkit-perspective: 500px;
+  -moz-perspective: 500px;
+  -ms-perspective: 500px;
+  perspective: 500px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+.module-memoryCard .card * {
+  pointer-events: none;
+}
+.module-memoryCard .card span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 80px;
+  height: 80px;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  box-shadow: #000 0 1px 2px;
+  -webkit-box-shadow: #000000 0 1px 2px;
+  -moz-box-shadow: #000000 0 1px 2px;
+  box-shadow: #000000 0 1px 2px;
+  background: #ffffff url(../img/default/logo-bw.png) no-repeat 50% 50%;
+  -moz-background-size: 100% ;
+  -webkit-background-size: 100% ;
+  -o-background-size: 100% ;
+  background-size: 100% ;
+  z-index: 900;
+}
+.module-memoryCard .card span.back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  z-index: 800;
+}
+.module-memoryCard .card-found {
+  visibility: hidden;
+}
+.module-memoryCard .card-loading span:first-child {
+  position: relative;
+  overflow: hidden;
+}
+.module-memoryCard .card-loading span:first-child:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: #ffffff url(../img/default/loading.png) no-repeat 50% 50%;
+  -webkit-animation: rotating-function 5s linear infinite;
+  -moz-animation: rotating-function 5s linear infinite;
+  -ms-animation: rotating-function 5s linear infinite;
+  -o-animation: rotating-function 5s linear infinite;
+  animation: rotating-function 5s linear infinite;
+}
+@-webkit-keyframes rotating-function {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotating-function {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(90deg);
+  }
+}
+@-ms-keyframes rotating-function {
+  from {
+    -ms-transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(90deg);
+  }
+}
+@-o-keyframes rotating-function {
+  from {
+    -o-transform: rotate(0deg);
+  }
+  to {
+    -o-transform: rotate(90deg);
+  }
+}
+@keyframes rotating-function {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.module-memoryCard .card-selected span {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  height: 98px;
+  width: 98px;
+  top: -9px;
+  left: -9px;
+  -moz-background-size: 100% ;
+  -webkit-background-size: 100% ;
+  -o-background-size: 100% ;
+  background-size: 100% ;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  -webkit-box-shadow: #333333 0 2px 4px;
+  -moz-box-shadow: #333333 0 2px 4px;
+  box-shadow: #333333 0 2px 4px;
+}
+.module-memoryCard .card-selected span.back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  z-index: 1000;
+}
+.module-memoryCard .gameboard-alt1 ul {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}
+.module-memoryCard .gameboard-alt1 ul .card {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+.module-memoryCard .gameboard-alt2 ul {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
+.module-memoryCard .gameboard-alt2 ul .card {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+}

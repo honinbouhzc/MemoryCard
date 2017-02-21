@@ -1,0 +1,22 @@
+{
+    "title": "Todo Validation",
+    "type": "object",
+    "properties": {
+        "has_detail_view": {
+            "description": "if items have detail view",
+            "type": "boolean"
+        },
+        "auto_complete": {
+            "description": "if items would be ticked automatically after being completed",
+            "type": "boolean"
+        },
+        "is_sequential": {
+            "description": "if items should be completed in a specific order",
+            "type": "boolean"
+        },
+        "lists": {
+            "type": "array"
+        }
+    },
+    "required": ["lists"]
+}

@@ -1,0 +1,145 @@
+.module-carousel img {
+  border: none;
+  padding: 0;
+}
+.module-carousel .slider_container {
+  position: relative;
+}
+.module-carousel .slides {
+  position: absolute;
+  overflow: hidden;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.module-carousel .slider-caption {
+  position: absolute;
+  top: 250px;
+  left: 10px;
+  width: 350px;
+  height: 50px;
+  overflow: hidden;
+}
+.module-carousel .jssora08l,
+.module-carousel .jssora08r {
+  background: rgba(0, 0, 0, 0) url("../img/a08.png") no-repeat scroll 0 0;
+  cursor: pointer;
+  display: block;
+  height: 50px;
+  opacity: 0.4;
+  overflow: hidden;
+  position: absolute;
+  width: 50px;
+}
+.module-carousel .jssora08l {
+  position: absolute;
+  top: 0;
+  background-position: -5px -35px;
+}
+.module-carousel .jssora08l:hover {
+  background-position: -5px -35px;
+  opacity: 0.8;
+}
+.module-carousel .jssora08l .jssora08ldn {
+  background-position: -5px -35px;
+  opacity: 0.3;
+}
+.module-carousel .jssora08r {
+  position: absolute;
+  bottom: 0;
+  background-position: -65px -35px;
+}
+.module-carousel .jssora08r:hover {
+  background-position: -65px -35px;
+  opacity: 0.8;
+}
+.module-carousel .jssora08r .jssora08rdn {
+  background-position: -65px -35px;
+  opacity: 0.3;
+}
+.module-carousel .jssora02l,
+.module-carousel .jssora02r {
+  background: rgba(0, 0, 0, 0) url("../img/a02.png") no-repeat scroll 0 0;
+  cursor: pointer;
+  display: block;
+  height: 55px;
+  overflow: hidden;
+  position: absolute;
+  width: 55px;
+}
+.module-carousel .jssora02l {
+  left: 8px;
+  background-position: -3px -33px;
+}
+.module-carousel .jssora02l:hover {
+  background-position: -123px -33px;
+}
+.module-carousel .jssora02l .jssora02ldn {
+  background-position: -3px -33px;
+}
+.module-carousel .jssora02r {
+  right: 8px;
+  background-position: -63px -33px;
+}
+.module-carousel .jssora02r:hover {
+  background-position: -183px -33px;
+}
+.module-carousel .jssora02r .jssora02rdn {
+  background-position: -63px -33px;
+}
+.module-carousel .jssorb01 {
+  position: absolute;
+  bottom: 8px;
+}
+.module-carousel .jssorb01 div,
+.module-carousel .jssorb01 div:hover,
+.module-carousel .jssorb01 .av {
+  position: absolute;
+  /* size of bullet elment */
+  width: 10px;
+  height: 10px;
+  filter: alpha(opacity=70);
+  opacity: .7;
+  overflow: hidden;
+  cursor: pointer;
+  border: #000 1px solid;
+}
+.module-carousel .jssorb01 div {
+  background-color: gray;
+}
+.module-carousel .jssorb01 div:hover,
+.module-carousel .jssorb01 .av:hover {
+  background-color: #d3d3d3;
+}
+.module-carousel .jssorb01 .av {
+  background-color: #fff;
+}
+.module-carousel .jssorb01 .dn,
+.module-carousel .jssorb01 .dn:hover {
+  background-color: #555555;
+}
+.module-carousel .jssorb01.vertical {
+  left: 8px;
+}
+.module-carousel .captionBlack {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 4px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 90%;
+  bottom: 35px;
+  padding: 5px;
+  font-size: 16px;
+  background: #000;
+  background-color: rgba(0, 0, 0, 0.4);
+}
